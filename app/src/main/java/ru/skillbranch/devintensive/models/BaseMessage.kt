@@ -6,15 +6,15 @@ abstract class BaseMessage(
     val id: String,
     val from: User?,
     val chat: Chat,
-    val isIncomihg: Boolean = false,
+    val isIncoming: Boolean = false,
     val date: Date = Date()
 ) {
 
-    abstract fun formatMassage(): String
+    abstract fun formatMessage(): String
 
     companion object AbstractFactory {
         var lastId = -1
-        fun makeMessage(
+        fun  makeMessage(
             from: User?,
             chat: Chat,
             date: Date = Date(),
