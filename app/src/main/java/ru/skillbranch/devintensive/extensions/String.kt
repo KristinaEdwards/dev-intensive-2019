@@ -1,12 +1,11 @@
 package ru.skillbranch.devintensive.extensions
 
 fun String.truncate(length: Int = 16): String {
-    val trimmedString = this.trim()
 
-    return if (trimmedString.length <= length) {
-        trimmedString
+    return if (this.length <= length) {
+        this
     } else {
-        trimmedString.take(length).trimEnd() + "..."
+        this.take(length).trimEnd() + "..."
     }
 }
 
