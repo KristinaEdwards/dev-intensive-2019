@@ -23,6 +23,10 @@ allprojects {
     }
 }
 
+gradle.taskGraph.useFilter { task ->
+    return !task.name.toLowerCase().contains("test")
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
